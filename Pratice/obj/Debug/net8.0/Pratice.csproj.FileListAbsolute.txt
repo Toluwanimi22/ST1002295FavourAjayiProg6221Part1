@@ -1,0 +1,14 @@
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\bin\Debug\net8.0\Pratice.exe
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\bin\Debug\net8.0\Pratice.deps.json
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\bin\Debug\net8.0\Pratice.runtimeconfig.json
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\bin\Debug\net8.0\Pratice.dll
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\bin\Debug\net8.0\Pratice.pdb
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\obj\Debug\net8.0\Pratice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\obj\Debug\net8.0\Pratice.AssemblyInfoInputs.cache
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\obj\Debug\net8.0\Pratice.AssemblyInfo.cs
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\obj\Debug\net8.0\Pratice.csproj.CoreCompileInputs.cache
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\obj\Debug\net8.0\Pratice.dll
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\obj\Debug\net8.0\refint\Pratice.dll
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\obj\Debug\net8.0\Pratice.pdb
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\obj\Debug\net8.0\Pratice.genruntimeconfig.cache
+C:\Users\lab_services_student\source\repos\Pratice\Pratice\obj\Debug\net8.0\ref\Pratice.dll
