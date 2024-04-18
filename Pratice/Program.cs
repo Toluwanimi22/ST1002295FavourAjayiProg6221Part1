@@ -1,4 +1,4 @@
-﻿namespace Part1
+namespace Part1
 {
     class Ingredients
     {
@@ -41,37 +41,18 @@
 
         public Receipe()
         {
+        }//this is a defult constr
+
+        public void AddIngredients(int index, string name, int quantity, string unitofMeasure)
+        {
+            ingredients[index] = new Ingredients { Name = name, Quantity = quantity, UnitofMeasurement = unitofMeasure };
+            
         }
 
-        public void AddIngredients(int numberofIngridents, string name, int quantity, string unitofMeasure)
-        {
-            if (numberofIngridents < ingredients.Length)
-            {
-                ingredients[numberofIngridents] = new Ingredients { Name = name, Quantity = quantity, UnitofMeasurement = unitofMeasure };
-                numberofIngridents++; // Increment the index for the next ingredient
-            }
-            else
-            {
-                int newCapacity = ingredients.Length * 2;
-                Ingredients[] newIngredients = new Ingredients[newCapacity];
-
-                // Copy existing elements to the new array
-                Array.Copy(ingredients, newIngredients, ingredients.Length);
-
-                // Assign the new array to the ingredients field
-                ingredients = newIngredients;
-
-                // Add the new ingredient
-                ingredients[numberofIngridents] = new Ingredients { Name = name, Quantity = quantity, UnitofMeasurement = unitofMeasure };
-                numberofIngridents++; // Increment the index for the next ingredient
-            }
-
-        }
-
-        public void AddSteps(int numberofSteps, string explaination)
+        public void AddSteps(int StepIndex, string explaination)
         {
 
-            steps[numberofSteps] = new Steps { Description = explaination }; //this can be also be seen as an idetifier 
+            steps[StepIndex] = new Steps { Description = explaination }; //this can be also be seen as an idetifier 
 
         }
 
@@ -81,7 +62,6 @@
             ingredients = new Ingredients[ingredients.Length];
             steps = new Steps[steps.Length]; //this step was used to clear the amount of data in the array
 
-            DisplayRecepie();
             Console.Clear();
 
 
@@ -109,7 +89,7 @@
             }                     //this dollar is for the index it numbers every step
 
             if(steps !=null)
-            for (int i = 1; i < steps.Length; i++) {
+            for (int i = 0; i < steps.Length; i++) {
                 Console.WriteLine($"{steps[i].Description}");  //i is the index and it will name index every descriprion and where at the number the user prompted  
             }
 
@@ -127,6 +107,8 @@
                 static void Main(string[] args)
 
                 {
+            Boolean finished = false;
+            Receipe food = new Receipe();
 
                     
                     
@@ -136,12 +118,13 @@
 
 
             
+            while (finished==false)
+                    {
+
                     Console.WriteLine("Choose Options:");
                     
             Console.WriteLine("1. Enter recepie details \n 2. View recepie details  \n 3. Clear Data  \n 4. Reset Data \n 5. Return to Menu");
             int select = int.Parse(Console.ReadLine());
-            while (select != 6)
-                    {
 
                     
 
@@ -158,9 +141,9 @@
                             Console.WriteLine("How many steps are needed for the " + nameofrecepie);
                             int numberofSteps = Convert.ToInt32(Console.ReadLine());
 
-                            Receipe food = new Receipe(numberOfingredients, numberofSteps);
+                             food = new Receipe(numberOfingredients, numberofSteps);
 
-                            for (int i = 1; i < numberOfingredients; i++)
+                            for (int i = 0; i < numberOfingredients; i++)
                             {
 
                                 Console.WriteLine($"Ingredient:{i}");
@@ -177,8 +160,8 @@
                                 Console.WriteLine("Unit Of Measurement : ");
 
                                 string unitOfMeasure = Console.ReadLine();
-
-                                food.AddIngredients(numberOfingredients, name, quantity, unitOfMeasure);
+                                
+                                food.AddIngredients(i, name, quantity, unitOfMeasure);
                             }
                             for (int i = 1; i < numberofSteps; i++)
                             {
@@ -186,6 +169,7 @@
                                 Console.WriteLine("Name : ");
 
                                 string Description = Console.ReadLine();
+                                food.AddSteps(i, Description);
                                   //assgined to an array
                             }
                             food.DisplayRecepie();
@@ -199,24 +183,23 @@
                         }
                         else if (select == 2)
                         {
-                    Receipe foods = new Receipe();
-                    Console.WriteLine("View Recpie Menu: ");
-                            foods.DisplayRecepie();
+                          Console.WriteLine("View Recpie Menu: ");
+                            food.DisplayRecepie();
 
 
                         }
 
                         else if(select ==3)
                         {
-                    Receipe foods = new Receipe();
+                    
                     Console.WriteLine("Thank You your Data has be cleared");
-                            foods.cleardata();
+                            food.cleardata();
                         }
                         else if (select == 4)
                         {
-                    Receipe foods = new Receipe();
-                    Console.WriteLine("Thank You your Data has be reset");
-                            foods.resetdata();
+                   
+                        Console.WriteLine("Thank You your Data has be reset");
+                            food.resetdata();
 
                         }
                         else if(select == 5)
