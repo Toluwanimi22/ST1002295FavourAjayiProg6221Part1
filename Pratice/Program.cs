@@ -163,7 +163,7 @@ namespace Part1
                                 
                                 food.AddIngredients(i, name, quantity, unitOfMeasure);
                             }
-                            for (int i = 1; i < numberofSteps; i++)
+                            for (int i = 0; i < numberofSteps; i++)
                             {
                                 Console.WriteLine($"numberOfSteps:{i}");
                                 Console.WriteLine("Name : ");
